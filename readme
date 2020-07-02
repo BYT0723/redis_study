@@ -1,0 +1,5 @@
+git pull
+git status
+git add -all
+git commit -m "注释"
+git push
