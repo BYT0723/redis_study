@@ -1,0 +1,27 @@
+2.keys命令
+	1）del key   -----   删除存在的key
+		删除成功返回1
+		删除失败返回0（包括未找到）
+	2）exists key   ----  检查key是否存在
+	
+	3）expire key seconds ---- 给key设置过期时间（秒）
+		pexpire key milliseconds ---- 给key设置过期时间（毫秒）
+	
+	4）keys pattern  ----  查询符合条件的key
+	
+	5）move key db  ---- 将当前db的key移动到给定的db
+	
+	6）persist key  ---- 移除key过期时间，持久保持
+	
+	7）ttl key ---- 返回key剩余时间（秒）
+		pttl key ---- 返回key剩余时间（毫秒）
+	
+	8）randomkey ---- 返回当前db一个随机key
+	
+	9）rename key newkey ---- 修改key的名称
+		//出现重名时，key对应的value覆盖newkey的value
+		renamenx key newkey ---- 当newkey不存在时，改key名为newkey 
+	
+	10）type key ---- 返回key对应value类型
+	
+	11）scan cursor [pattern].[count] ---- 迭代数据库中的数据库键

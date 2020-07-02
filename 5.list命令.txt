@@ -1,0 +1,30 @@
+5.list命令
+	1）push命令
+		lpush key value1 [value2] ---- 将一个或多个value添加到list的头部
+		lpushx key value ---- 将一个value插入到一个已存在的list的头部
+		rpushx key value ---- 为存在的list添加value
+		rpush key value1 [value2] ---- 为list添加多个值
+		
+		linsert key before/after pivot value ----在值为pivot之前或之后插入value
+		lset key index value ---- 设置key[index] = value
+		
+	2）pop命令
+		lpop key ---- 移除并获取list的第一个元素
+		blpop key1 [key2] timeout(s) ---- 移除并获取list的第一个元素，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
+		rpop key ---- 移除并获取list的最后一个元素
+		brpop key1 [key2] timeout(s) ---- 移除并获取list的最后一个元素，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
+		rpoplpush source detinetion ---- 将source的队尾元素取出，插入destinetion队首
+		brpoplpush source destinetion timeout ---- 将source的队尾元素取出，插入destinetion队首，如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
+		
+		lrem key count value ---- 移除列表中value
+			count>0时，从队首开始搜索，移除匹配行数为count
+			count<0时，从队尾开始搜索，移除匹配行数为|count|
+			count=0时，移除所有匹配的value
+		
+	3）查询
+		lindex key index ---- 同key[index]
+		lrange key start stop ---- 获取切片key[start,stop]
+	
+	4）llen key ---- 获取list的长度
+	
+	5）ltrim key index stop ---- 同key = key[start,stop]

@@ -1,0 +1,24 @@
+4.hash命令
+	1）hset
+		hset key field value ---- 设定hash表key中字段field的值为value
+			hmset key field1 value1 [field2 value2] ----设定多个field-value
+			hsetnx key field value ---- 设置不存在的field-value
+		
+	2）hget
+		hget key field ---- 获取hash表key中的field字段的值
+		hgetall key ---- 获取hash表key中所有字段和值
+			hmget key field1[field2] ---- 获取一个或多个hash表key中的field对应的value
+	
+	3）hdel key field1[field2] ---- 删除一个或多个hash表字段
+	
+	4）hexists key field ---- 检查hash表key中是否存在field字段
+	
+	5）hlen key ---- 获取hash表key的字段数
+	
+	6）hkeys key ---- 获取hash表key的所有field
+	
+	7）hvals key ---- 获取hash表key中所有value
+	
+	8）hincrby key field increment ---- key.field.value += increment
+	
+	9）hscan key cursor [match pattern] [count count] ---- 迭代哈希表中键值对

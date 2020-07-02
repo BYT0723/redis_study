@@ -1,0 +1,29 @@
+6.set
+	1)add
+		sadd key member1 [member2] ---- 向set中添加一个或多个成员
+	
+	2）scard key ---- 获取set成员数量
+	
+	3）diff(差集)
+		sdiff key1 [key2] ---- 返回给定所有集合的差集
+		sidffstore destination key1 [key2] ---- 所有集合的差集存储在destination中
+	
+	4）insert(交集)
+		sinter key1 [key2] ---- 返回所有集合的交集
+		sinterstore destination key1 [key2] ---- 所有集合的交集存储在destination中
+	
+	5）union(并集)
+		sunion key1 [key2] ---- 返回所有集合的并集
+		sunionstore destination key1 [key2] ---- 所有集合的并集存储在destination中
+
+	6）查询
+		sismember key member ---- 判断member是不是集合key成员
+		smembers key ---- 返回key集合所有成员
+		srandmember key [count] ---- 返回集合key中一个或多个随机数
+	
+	7）移除
+		spop key ---- 移除并且返回集合key中一个随机成员
+		srem key member1 [member2] ---- 移除集合key一个或多个成员
+		smove source destination member ---- 将成员member从source移动到destination中
+	
+	

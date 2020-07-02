@@ -1,0 +1,29 @@
+3.redis string命令
+	1）set
+		set key value ---- 设定key对应值为value
+			mset key value[key value] ---- 同时设置多条key-value
+			setex key seconds value ---- 将key的值设为value，并设置过期时间为seconds（秒）
+				psetex key milliseconds value ---- 将key的值设为value，并设置过期时间为milliseconds（毫秒）
+			setnx key value ---- 仅当key不存在时，设置key的值为value
+				msetnx key value[key value] ---- 同时设置多条不存在的key-value
+			setrange key start value ---- 从start覆盖value
+			
+		append key value ---- key存在时且为字符串，value末尾追加，key不存在见set
+	
+	2）get
+		get key ---- 获取key对应的value
+			mget key1[key2] ---- 获取一个或多个key的value
+		getset key value ---- 设定key对应的值为value，并返回oldvalue
+		getrange key start end ---- 返回key对应的value的切片[start,end]
+	
+	3）value加
+		incr key ---- value++
+			incrby key increment ---- value += increment
+			incrbyfloat key increment ---- increment为浮点型
+	
+	4）value减
+		decr key ---- value--
+			decrby key decrement ---- value -= decrement
+			
+	5）其他
+		strlen key ---- 获取value的长度
