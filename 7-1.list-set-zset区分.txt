@@ -1,0 +1,13 @@
+list set zset的区别
+			重复value	是否有序	有序实现	应用场景
+
+	list	   是		   是		索引下标	时间轴、消息队列等
+	
+	set		   否		   否		   无		标签、社交等
+	
+	zset	   否		   是		  分值		排行榜系统、社交等
+	
+		
+	list和zset中
+		list中 index - value，下标不重复，可出现重复值
+		zset中 value - score，value不重复，score可重复

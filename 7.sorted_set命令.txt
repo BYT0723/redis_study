@@ -1,0 +1,35 @@
+7.sorted set命令
+	1）add
+		zadd key score member1 [score2 member2] ---- 向有序集合中添加一个或多个成员，或者修改已存在成员的score
+	
+	2）zrem
+		zrem key member [member...] ---- 移除一个或多个member
+			zremrangebylex key min max ---- 移除min =< value <= max的成员
+			zremrangebyrank key min max ---- 移除min =< index <= max的成员
+			zremrangebyscore key min max ---- 移除min =< score <= max的成员
+	
+	3）member
+		zrange key start stop [withscores] ---- 返回start =< index =< stop的成员
+			zrangebylex key min max [limit offset count] ---- 返回min =< value =< max的成员
+			zrangebyscore key min max [withscores] ----- 返回min =< score =< max的成员
+		zrevrange key start stop ---- 返回 start =< index =< stop 的成员，按score降序
+			zrevrangebyscore key max min ---- 返回 min =< score =< max 的成员，按score降序
+	4）member num
+		zcard key ---- 返回有序集合的成员数
+		zcount key min max ---- 返回有序集合中 min =< score =< max 的成员数
+		zlexcount key min max ---- 返回有序集合中 min =< value =< max 的成员数
+		
+	5）index
+		zrank key member ---- 返回member的index
+			zrevrank key member ---- 返回member的index，按score降序
+	6）score
+		zscore key member ---- 返回member的score
+		
+	7）zincrby key increment member ---- 等价key.score += increment
+	
+	8）交并
+		zinterstore destination numkeys key [key...] ---- numkeys个有序集的交集存储在有序集合destination中
+		zunionstore destination numkeys key [key...] ---- numkeys个有序集的并集存储在有序集合destination中
+
+	9）scan key cursor [mathch pattern] [Count count] ---- 返回从index=cursor开始符合pattern的count行
+		
